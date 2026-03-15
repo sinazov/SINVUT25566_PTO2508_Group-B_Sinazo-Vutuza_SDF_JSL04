@@ -31,7 +31,7 @@ const initialTasks = [
     title: "Build Portfolio 🛠️",
     description: "Create projects to showcase your skills",
     status: "done",
-  }
+  },
 ];
 // ===============================
 // DOM ELEMENTS
@@ -76,3 +76,62 @@ function createTaskCard(task) {
 
   return card;
 }
+// ===============================
+// RENDER TASKS
+// ===============================
+/**
+ * Inserts tasks into their correct columns depending on status.
+ */
+function renderTasks() {
+  initialTasks.forEach((task) => {
+    const card = createTaskCard(task);
+
+    if (task.status === "todo") {
+      todoColumn.appendChild(card);
+    } else if (task.status === "doing") {
+      doingColumn.appendChild(card);
+    } else if (task.status === "done") {
+      doneColumn.appendChild(card);
+    }
+  });
+}
+
+// ===============================
+// OPEN MODAL
+// ===============================
+
+/**
+ * Opens the modal and fills it with
+ * the selected task's data.
+ * @param {Object} task - The clicked task
+ */
+function openTaskModal(task) {
+  titleInput.value = task.title;
+  descInput.value = task.description;
+  statusSelect.value = task.status;
+
+  modal.showModal();
+}
+
+// ===============================
+// CLOSE MODAL
+// ===============================
+
+/**
+ * Closes the task modal.
+ */
+function closeModal() {
+  modal.close();
+}
+
+closeModalBtn.addEventListener("click", closeModal);
+
+// ===============================
+// INITIALIZE
+// ===============================
+
+function init() {
+  clearExistingCards();
+  renderTasks();
+}
+init();
