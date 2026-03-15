@@ -1,65 +1,52 @@
-**JSL03 – Console-Based Task Manager**
-Overview
+**JSL04 – Dynamic Task Display & Modal View**
+Project Overview
 
-This project is a console-based task management system built with JavaScript.
-It allows users to add tasks through prompts, store them as objects in an array, and filter completed tasks.
+This project is a Kanban-style task board that dynamically displays tasks in TODO, DOING, and DONE columns. Tasks can be clicked to open a modal showing details, and the board automatically populates from JavaScript data.
 
 **Features**
 
-Stores tasks as objects inside an array
+Dynamic task rendering in columns based on status.
 
-Allows adding up to 3 new tasks
+Clickable task cards that open a modal with:
 
-Generates a unique incremental ID for each task
+Task title
 
-Collects title, description, and status via prompts
+Task description
 
-Validates status input (todo, doing, done)
+Status selection
 
-Alerts user when task limit is reached
+Clear separation of tasks using DOM manipulation.
 
-**Logs:**
+Modular and reusable JavaScript code.
 
-All tasks
-
-Completed tasks only
-
+File Structure
+JSL04/
+├─ index.html           # Main HTML layout
+├─ styles.css           # Project styling
+├─ script.js            # JavaScript logic for task rendering & modal
+├─ assets/              # Images and icons (e.g., favicon.svg, logo-light.svg)
 **How It Works**
 
-Existing tasks are stored in an array.
+Initial Tasks: Defined in script.js as an array of task objects with title, description, and status.
 
-The user adds up to three new tasks.
+Render Tasks: JS dynamically creates task cards and appends them to the appropriate column.
 
-**Each task is saved as an object with:**
+Modal Functionality: Clicking a task card opens a modal pre-filled with task details.
 
-id
+Clear Cards: Before rendering, any existing task cards are removed to prevent duplicates.
 
-title
-
-description
-
-status
-
-All tasks are displayed in the console.
-
-Completed tasks are filtered and logged separately.
-
-**How to Run**
+Usage
 
 Open index.html in a browser.
 
-Enter task details when prompted.
+The board will populate automatically with predefined tasks.
 
-Open the browser console to view results.
+Click on any task card to view details in the modal.
 
-**Concepts Used**
+Technologies Used
 
-Arrays and Objects
+HTML5
 
-Functions
+CSS3
 
-Loops and Conditionals
-
-Input Validation
-
-Array .filter() Method
+JavaScript (Vanilla JS, DOM Manipulation)
