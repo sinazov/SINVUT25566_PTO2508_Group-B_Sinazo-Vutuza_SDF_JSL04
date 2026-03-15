@@ -33,3 +33,46 @@ const initialTasks = [
     status: "done",
   }
 ];
+// ===============================
+// DOM ELEMENTS
+// ===============================
+const todoColumn = document.getElementById("todo-column");
+const doingColumn = document.getElementById("doing-column");
+const doneColumn = document.getElementById("done-column");
+
+const modal = document.getElementById("task-modal");
+const closeModalBtn = document.getElementById("close-modal-btn");
+
+const titleInput = document.getElementById("task-title");
+const descInput = document.getElementById("task-desc");
+const statusSelect = document.getElementById("task-status");
+
+// ===============================
+// CLEAR HARDCODED CARDS
+// ===============================
+
+function clearExistingCards() {
+  const cards = document.querySelectorAll(".card");
+  cards.forEach((card) => card.remove());
+}
+
+// ===============================
+// CREATE TASK CARD
+// ===============================
+
+/**
+ * Creates a DOM element representing a task card.
+ * @param {Object} task - Task object from initialTasks
+ * @returns {HTMLElement} Task card element
+ */
+function createTaskCard(task) {
+  const card = document.createElement("div");
+  card.classList.add("card");
+  card.textContent = task.title;
+
+  card.addEventListener("click", () => {
+    openTaskModal(task);
+  });
+
+  return card;
+}
