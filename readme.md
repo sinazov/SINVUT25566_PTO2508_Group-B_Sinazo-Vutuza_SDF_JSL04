@@ -1,9 +1,9 @@
-**JSL04 – Dynamic Task Display & Modal View**
+JSL04 – Dynamic Task Display & Modal View
 Project Overview
 
 This project is a Kanban-style task board that dynamically displays tasks in TODO, DOING, and DONE columns. Tasks can be clicked to open a modal showing details, and the board automatically populates from JavaScript data.
 
-**Features**
+Features
 
 Dynamic task rendering in columns based on status.
 
@@ -25,7 +25,7 @@ JSL04/
 ├─ styles.css           # Project styling
 ├─ script.js            # JavaScript logic for task rendering & modal
 ├─ assets/              # Images and icons (e.g., favicon.svg, logo-light.svg)
-**How It Works**
+How It Works
 
 Initial Tasks: Defined in script.js as an array of task objects with title, description, and status.
 
